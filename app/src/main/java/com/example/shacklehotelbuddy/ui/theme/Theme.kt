@@ -2,34 +2,27 @@ package com.example.shacklehotelbuddy.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.ReadOnlyComposable
-import androidx.compose.runtime.remember
-import com.example.shacklehotelbuddy.ui.theme.ShackleHotelBuddyTheme.colors
-import com.example.shacklehotelbuddy.ui.theme.ShackleHotelBuddyTheme.typography
-
-object ShackleHotelBuddyTheme {
-    val colors: CustomColors
-        @Composable
-        @ReadOnlyComposable
-        get() = LocalColors.current
-
-    val typography: CustomTypography
-        @Composable
-        @ReadOnlyComposable
-        get() = LocalTypography.current
-}
+import androidx.compose.runtime.SideEffect
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun ShackleHotelBuddyTheme(
-    colors: CustomColors = ShackleHotelBuddyTheme.colors,
-    typography: CustomTypography = ShackleHotelBuddyTheme.typography,
     content: @Composable () -> Unit
 ) {
-    val rememberedColors = remember { colors.copy() }.apply { updateColorsFrom(colors) }
+    val colors = defaultStylePalette
+    val typography = defaultStyleTypography
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        systemUiController.setSystemBarsColor(
+            colors.colorAbsolutelyTransparent,
+            darkIcons = true
+        )
+    }
 
     CompositionLocalProvider(
-        LocalColors provides rememberedColors,
-        LocalTypography provides typography
+        LocalShackleThemeColors provides colors,
+        LocalShackleThemeTypography provides typography,
     ) {
         content()
     }

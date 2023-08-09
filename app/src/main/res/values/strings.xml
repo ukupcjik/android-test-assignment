@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">ShackleHotelBuddy</string>
+    <string name="app_main_screen_booking_title">Select guests,\ndate and time</string>
+    <string name="app_main_screen_booking_check_in">Check-in date</string>
+    <string name="app_main_screen_booking_check_out">Check-out date</string>
+    <string name="app_main_screen_booking_adults">Adults</string>
+    <string name="app_main_screen_booking_children">Children</string>
+    <string name="app_main_screen_booking_date_hint">DD / MM / YYYY</string>
+    <string name="app_main_screen_booking_count_hint">0</string>
+    <string name="app_main_screen_booking_search_button">Search</string>
+
+    <string name="app_main_screen_history_title">Recent searches</string>
+    <string name="app_main_screen_history_item_adult">adult</string>
+    <string name="app_main_screen_history_item_children">children</string>
+
+    <string name="app_search_result_screen_title">Search results</string>
+    <string name="app_search_result_screen_error_title">Oops, something went wrong…</string>
+    <string name="app_search_result_screen_error_message">try refreshing the page</string>
+    <string name="app_search_result_screen_error_button">Refresh</string>
+
+    <plurals name="adult">
+        <item quantity="zero">%1$d adults</item>
+        <item quantity="one">%1$d adult</item>
+        <item quantity="two">%1$d adults</item>
+        <item quantity="few">%1$d adults</item>
+        <item quantity="many">%1$d adults</item>
+        <item quantity="other">%1$d adults</item>
+    </plurals>
+
+    <plurals name="children">
+        <item quantity="zero">%1$d children</item>
+        <item quantity="one">%1$d child</item>
+        <item quantity="two">%1$d children</item>
+        <item quantity="few">%1$d children</item>
+        <item quantity="many">%1$d children</item>
+        <item quantity="other">%1$d children</item>
+    </plurals>
 </resources>
